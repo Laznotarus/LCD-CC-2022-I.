@@ -1,0 +1,24 @@
+import multiprocessing as mp
+import time
+
+def calc_cuad(numeros):
+  print("Calcula cuadrado de números")
+  for n in numeros:
+    time.sleep(0.2)
+    print('cuadrado: ',n * n)
+  
+def calc_cubo(numeros):
+  print("Calcula cubo de números")
+  for n in numeros:
+    time.sleep(0.2)
+    print('cubo: ', n**3)
+
+nums = range(10)
+
+t = time.time()
+calc_cuad(nums)
+calc_cubo(nums)
+
+
+print("Tiempo de ejecución: ", time.time()-t)
+print("Finaliza ejecución")
