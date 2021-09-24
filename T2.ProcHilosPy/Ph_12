@@ -1,0 +1,14 @@
+def TareaProceso():
+  pactual = mp.current_process()
+  print('Proceso hijo: {}'.format(pactual.pid))
+  time.sleep(5)
+  pactual = mp.current_process()
+  print('Proceso padre pid: {}'.format(pactual.pid))
+
+miproceso = mp.Process(target=TareaProceso)
+miproceso.start()
+time.sleep(10)
+print("Proceso padre ha terminado, termina el proceso main")
+print("Proceso hijo terminado...")
+miproceso.terminate()
+print("Proceso hijo finaliza con éxito")
