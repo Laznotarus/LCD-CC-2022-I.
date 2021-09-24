@@ -1,0 +1,16 @@
+import time 
+def TareaHijo():
+  print('Proceso hijo con PID: {}'.format(mp.current_process().pid))
+  time.sleep(3)
+  print('Fin del proceso hijo')
+
+def main():
+  print('Proceso padre con PID: {}'.format(mp.current_process().pid))
+  miproceso = mp.Process(target=TareaHijo)
+  miproceso.start()
+  miproceso.join()
+  print('Fin del proceso padre')
+
+
+
+main()
