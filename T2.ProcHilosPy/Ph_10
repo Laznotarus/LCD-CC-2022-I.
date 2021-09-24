@@ -1,0 +1,13 @@
+import os
+
+def proceso_1():
+  print("Proceso_1 con nombre: {}".format(mp.current_process().name))
+  print('Proceso padre: {}'.format(os.getppid()))
+  print('Proceso hijo con PID: {}'.format(mp.current_process().pid))
+  
+def main():
+  phijo= mp.Process(target=proceso_1, name="Primer_Poceso")
+  phijo.start()
+  phijo.join()
+
+main()
