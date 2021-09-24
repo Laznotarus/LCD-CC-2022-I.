@@ -1,0 +1,8 @@
+import multiprocessing as mp
+def tarea(nombre):
+  print('Hola', nombre)
+
+if __name__ =='__main__':
+  p = mp.Process(target=tarea, args=('Laz',))
+  p.start()
+  p.join()
