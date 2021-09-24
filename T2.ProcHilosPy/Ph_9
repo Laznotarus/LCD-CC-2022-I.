@@ -1,0 +1,10 @@
+def miproceso():
+  print("Proceso con nombre: {}".format(mp.current_process().name))
+
+def main():
+  phijo = mp.Process(target=miproceso, name="Proceso_LCD-CC")
+  phijo.start()
+  phijo.join()
+
+main()
+
