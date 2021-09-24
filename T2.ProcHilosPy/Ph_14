@@ -1,0 +1,13 @@
+from multiprocessing import Process, Queue
+
+def worker(num, q):
+  print("Se pone en la cola: ", num * num)
+  q.put(num * num)
+
+if __name__=='__main__':
+  my_queue = Queue()
+  p = Process(target=worker, args=(5, my_queue))
+  p.start()
+  p.join()
+
+  print("Se lee de la cola: ", my_queue.get())
